@@ -34,7 +34,7 @@ Route::get('/about', function () {
   ]);
 });
 
-Route::get('/blog', function () {
+Route::get('/post', function () {
   $blog_posts = [
     [
       "tittle" => "Surga Duniawi",
@@ -57,13 +57,13 @@ Route::get('/blog', function () {
   ];
 
   return view('blog', [
-    "tittle" => "Blog",
+    "tittle" => "Post",
     "posts" => $blog_posts,
     "gambar" => "Lokal"
   ]);
 });
 
-Route::get('post/{slug}', function($slug) {
+Route::get('/post/{slug}', function($slug) {
   $blog_posts = [
     [
       "tittle" => "Surga Duniawi",
