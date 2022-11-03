@@ -16,10 +16,10 @@ class PostController extends Controller
       ]);
     }
 
-    public function show($id) {
+    public function show(Post $post) {
       return view('post', [
         "title" => "Single Post",
-        "post" => Post::find($id),
+        "post" => $post,
         "gambar" => "Valdo"
       ]);
     }

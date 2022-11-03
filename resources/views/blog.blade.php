@@ -4,7 +4,7 @@
   @foreach ($posts as $post)
   <article class='mb-5'>
     <h2> 
-      <a href='/post/{{ $post->id }}'>{{ $post->tittle }}</a>
+      <a href='/post/{{ $post->slug }}'>{{ $post->tittle }}</a>
     </h2> 
     <p> {{ $post->excerpt }}</p>   
     </article>
