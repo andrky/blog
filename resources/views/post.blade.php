@@ -5,9 +5,8 @@
     <h2>{{ $post->tittle }}</h2>
 
     <p style="font-size:12px;">By :
-      <a href="#" class="text-decoration-none"> {{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
-    <p> {{ $post->excerpt }}</p>
-    
+          <a href="/authors/{{ $post->user->username }}" class="text-decoration-none"> {{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
+        <p> {{ $post->excerpt }}</p>
     {!! $post->body !!}
     
     <br/>
