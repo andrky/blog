@@ -10,7 +10,8 @@ class AboutController extends Controller
     public function index()
     {
       return view('about', [
-        'title' => 'Home',
+        'title' => 'About',
+        'active' => 'about',
         'gambar' => 'Lokal'
       ]);
     }

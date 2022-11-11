@@ -11,7 +11,8 @@ class PostController extends Controller
     public function index() {
       return view('blog', [
         "title" => "All Post",
-        "posts" => Post::with(['category', 'user'])->latest()->get(),
+        'active' => 'blog',
+        "posts" => Post::latest()->get(),
         "gambar" => "Lokal"
       ]);
     }
@@ -19,6 +20,7 @@ class PostController extends Controller
     public function show(Post $post) {
       return view('post', [
         "title" => "Single Post",
+        'active' => 'post',
         "post" => $post,
         "gambar" => "Valdo"
       ]);
