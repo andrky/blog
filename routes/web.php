@@ -23,6 +23,7 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('home', [
       'title' => 'Home',
+      'active' => 'home',
       'gambar' => 'Lokal'
     ]);;
 });
