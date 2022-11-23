@@ -21,11 +21,12 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', function () {
-    return view('home', [
-      'title' => 'Home',
-      'active' => 'home',
-      'gambar' => 'Lokal'
-    ]);;
+	return view('home', [
+		'title' => 'Home',
+		'active' => 'home',
+		'gambar' => 'Lokal'
+	]);
+	;
 });
 
 Route::get('/home', [HomeController::class, 'index']);
@@ -34,17 +35,17 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/post', [PostController::class, 'index']);
 
-Route::get('/post/{post:slug}',[PostController::class, 'show']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 
-Route::get('/authors/{user:username}', function(User $user) {
-  return view('blog', [
-    'title' => "Post by Author : $user->name",
-    'active' => 'post',
-    'posts' => $user->posts->load(['user', 'category']),
-    'gambar' => 'Valdo'
-  ]);
+Route::get('/authors/{user:username}', function (User $user) {
+	return view('blog', [
+		'title' => "Post by Author : $user->name",
+		'active' => 'post',
+		'posts' => $user->posts->load(['user', 'category']),
+		'gambar' => 'Valdo'
+	]);
 });
