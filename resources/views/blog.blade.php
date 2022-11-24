@@ -10,7 +10,7 @@
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
-								@if (request('author'))
+                @if (request('author'))
                     <input type="hidden" name="author" value="{{ request('author') }}">
                 @endif
                 <div class="input-group mb-3">
@@ -96,7 +96,7 @@
         <p class="text-center fs-4">No post found.</p>
     @endif
 
-		<div class="d-flex justify-content-end">
-			{{ $posts->links() }}
-		</div>
+    <div class="d-flex justify-content-end">
+        {{ $posts->links() }}
+    </div>
 @endsection
