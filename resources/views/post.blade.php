@@ -9,10 +9,10 @@
         </h1>
 
         <p class="fs-6">By :
-              <a href="/authors/{{ $post->user->username }}" class="text-decoration-none"> 
+              <a href="/post?author={{ $post->user->username }}" class="text-decoration-none"> 
                 {{ $post->user->name }}
               </a> in 
-              <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">
+              <a href="/post?category={{ $post->category->slug }}" class="text-decoration-none">
                 {{ $post->category->name }}
               </a>
         </p>
@@ -28,8 +28,4 @@
       </div>
     </div>
   </div>
-
-  <article>
-    
-  </article>
 @endsection
