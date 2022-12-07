@@ -5,8 +5,15 @@
         <h1 class="h3">My Posts</h1>
     </div>
 
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="table-responsive">
-			<a href="/dashboard/posts/create" class="btn mb-3 bg-primary text-white">Create New Post</a>
+        <a href="/dashboard/posts/create" class="btn mb-3 bg-primary text-white">Create New Post</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -23,10 +30,11 @@
                         <td>{{ $post->tittle }}</td>
                         <td>{{ $post->category->name }}</td>
                         <td>
-													<a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-													<a href="#" class="badge bg-warning"><span data-feather="edit"></span></a>
-													<a href="#" class="badge bg-danger"><span data-feather="x-circle"></span></a>
-												</td>
+                            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span
+                                    data-feather="eye"></span></a>
+                            <a href="#" class="badge bg-warning"><span data-feather="edit"></span></a>
+                            <a href="#" class="badge bg-danger"><span data-feather="x-circle"></span></a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
