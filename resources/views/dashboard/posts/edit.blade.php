@@ -66,4 +66,3 @@
 				})
     </script>
 @endsection
-13462063 sukasti
