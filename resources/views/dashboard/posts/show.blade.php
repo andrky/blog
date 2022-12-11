@@ -9,10 +9,12 @@
                 </h1>
 
                 <a href="/dashboard/posts" class="text-decoration-none btn btn-success"><span data-feather="arrow-left"></span></span>Back to all My Post</a>
-                <a href="#" class="text-decoration-none btn btn-warning"><span data-feather="edit"></span>Edit</a>
-                <a href="#" class="text-decoration-none btn btn-danger"><span data-feather="x-circle"></span>Delete</a>
-
-
+                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="text-decoration-none btn btn-warning"><span data-feather="edit"></span>Edit</a>
+                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+															@method('delete')
+															@csrf
+															<button type="submit" class="text-decoration-none btn btn-danger" onclick="return confirm('Are you sure ?')"><span data-feather="x-circle"></span>Delete</button>
+														</form>
                 <p class="fs-6 mt-3">By :
                     <a href="/post?author={{ $post->user->username }}" class="text-decoration-none">
                         {{ $post->user->name }}
