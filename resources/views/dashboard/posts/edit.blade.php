@@ -41,7 +41,7 @@
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
-                <input id="body" type="hidden" name="body" value="{{ old('body', $post->tittle) }}">
+                <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
                 <trix-editor input="body"></trix-editor>
 								@error('body')
 									<p class="text-danger">{{ $message }}</p>

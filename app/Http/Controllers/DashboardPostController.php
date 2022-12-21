@@ -95,10 +95,14 @@ class DashboardPostController extends Controller
     public function update(Request $request, Post $post)
     {
         $rules = [
-					'tittle' => 'required|unique:posts|max:255',
+					// 'tittle' => 'required|unique:posts|max:255',
 					'category_id' => 'required',
 					'body' => 'required'
 				];
+
+				if($request->tittle != $post->tittle) {
+					$rules['tittle'] = 'required|unique:posts|max:255';
+				}
 
 				if($request->slug != $post->slug) {
 					$rules['slug'] = 'required|unique:posts';
